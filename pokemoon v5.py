@@ -65,10 +65,10 @@ class Jeu :
         self.c2 = c2
 
     def run(self): #code du combat
-        while self.c1.pv and self.c2.pv >= 1 :
+        while self.c1.alive and self.c2.alive :
             x = self.c1
             y = self.c2
-            while self.c1.pv and self.c2.pv >= 1:
+            while self.c1.alive and self.c2.alive >= 1:
                 x.fight(y)
                 x, y = y, x
             if not self.c1.alive :
@@ -77,16 +77,19 @@ class Jeu :
                  print(f'{self.c1.nom} gagne')
 
 poke = [
-    Pokémoon({"nom" : "salamèche", "pv" : 30, "type_feu": True, "type_eau": False, "type_plante": False}),
-    Pokémoon({"nom" : "darumarrond", "pv" : 30, "alive": True, "type_feu": True, "type_eau": False, "type_plante": False})
+    {"nom" : "salamèche", "pv" : 30, "type_feu": True, "type_eau": False, "type_plante": False},
+    {"nom" : "darumarrond", "pv" : 30, "type_feu": True, "type_eau": False, "type_plante": False}
 ]
 choix_perso = int(input("0"))
-print(poke[choix_perso])
 perso1 = poke[choix_perso]
-print(perso1)
+
+def dic2poke(dic):
+     return Pokémoon(dic["nom"], dic["pv"], dic["type_feu"], dic["type_eau"], dic["type_plante"])
+
+
 c1 = Pokémoon("salameche", 30, True, False, False)
 c2 = Pokémoon("salameche", 30, True, False, False)
 
-j= Jeu(perso1,c2) #choix du pokémoon
+j= Jeu(dic2poke(perso1),c2) #choix du pokémoon
 
 j.run()
