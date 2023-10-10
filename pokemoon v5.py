@@ -1,4 +1,5 @@
 import json
+from efficacity import efficacite, feu, eau, plante 
 
 class Pokémoon :
     def __init__(self, n: str, pv: int, type_feu: bool, type_eau: bool, type_plante: bool) -> None:
@@ -13,26 +14,12 @@ class Pokémoon :
         self.type_plante = type_plante
 
     def fight(self, other):
-        feu = True, False, False
-        eau = False, True, False
-        plante = False, False, True
-        éfficatité = {
-        (feu , plante) : True, #renvoie True si il y a éfficacité de type sinon     False
-        (feu , eau) : False,
-        (feu , feu) : False,
-        (plante , plante) : False,
-        (plante , eau) : True,
-        (plante , feu) : False,
-        (eau , plante) : False,
-        (eau , eau) : False,
-        (eau , feu) : True
-        }
         input(f"Au tour de {self.nom}")
         action = int(input("coup d'boule(1) , charge(2) , sac(3)  "))# attaque spécifique au type(2)
         if action == 1 :
             other.pv -=8
         if action == 2 :
-            if éfficatité[(self.type,other.type)]:
+            if efficacite[(self.type,other.type)]:
                 other.pv -= 30
                 print("super efficace")
             else :
