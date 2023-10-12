@@ -63,20 +63,24 @@ class Jeu :
             else : 
                  print(f'{self.c1.nom} gagne')
 
-poke = [
-    {"nom" : "salamèche", "pv" : 30, "type_feu": True, "type_eau": False, "type_plante": False},
-    {"nom" : "darumarrond", "pv" : 30, "type_feu": True, "type_eau": False, "type_plante": False}
-]
-choix_perso = int(input("0"))
-perso1 = poke[choix_perso]
+def get_data_poke(i):
+    with open("data.json", 'r') as file :
+        poke = json.load(file)
+    perso1 = poke[i]
+    return perso1
 
 def dic2poke(dic):
-     return Pokémoon(dic["nom"], dic["pv"], dic["type_feu"], dic["type_eau"], dic["type_plante"])
+    return Pokémoon(dic["nom"], dic["pv"], dic["type_feu"], dic["type_eau"], dic["type_plante"])
+
+choix_perso = int(input("salameche, darrumarond "))
+choix_perso -= 1
+p1 = dic2poke(get_data_poke(choix_perso))
+
+choix_perso = int(input("sal, dar "))
+choix_perso -= 1
+p2 = dic2poke(get_data_poke(choix_perso))
 
 
-c1 = Pokémoon("salameche", 30, True, False, False)
-c2 = Pokémoon("salameche", 30, True, False, False)
+j= Jeu(p1,p2) 
 
-j= Jeu(dic2poke(perso1),c2) #choix du pokémoon
-
-j.run()
+j.run() 

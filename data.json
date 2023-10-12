@@ -1,5 +1,5 @@
 [
-{"nom" : "salamèche", "pv" : 30, "type_feu": true, "type_eau": false, "type_plante": false},
+{"nom" : "salameche", "pv" : 30, "type_feu": true, "type_eau": false, "type_plante": false},
 {"nom" : "darumarrond", "pv" : 30, "type_feu": true, "type_eau": false, "type_plante": false},
 {"nom" : "carapuce", "pv" : 30, "type_feu": false, "type_eau": true, "type_plante": false},
 {"nom" : "moustillon", "pv" : 30, "type_feu": false, "type_eau": true, "type_plante": false},
