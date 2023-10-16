@@ -24,6 +24,6 @@ class Jeu :
             else : 
                  print(f'{self.p1.nom} gagne')
 
-j= Jeu(choix_perso1(),choix_perso2()) 
+j= Jeu(choix_perso(),choix_perso()) 
 
 j.run()
