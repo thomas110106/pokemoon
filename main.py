@@ -2,8 +2,7 @@
 fichier pricipal du jeu ou se deroule les actions
 """
 from pokemoon import Pokemoon
-from choix_poke import choix_perso1
-from choix_poke import choix_perso2 
+from choix_poke import choix_perso
 
 class Jeu :
 

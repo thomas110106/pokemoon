@@ -3,13 +3,13 @@ dans ce fichier se trouve la classe pokemon ou sont stocker les donner de chaque
 que leurs pv ou leurs type, et la definition fight 
 """
 from efficacity import efficacite, feu, plante, eau
-from attaque import attaque
+
 
 class Pokemoon :
     def __init__(self, n: str, pv: int, type_feu: bool, type_eau: bool, type_plante: bool) -> None:
         self.nom = n
-        self.pv = pv 
         self.alive = True
+        self.pv = pv
         self.p = 2 
         self.sp = 1
         self.type = type_feu, type_eau, type_plante

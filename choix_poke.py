@@ -19,9 +19,9 @@ def dic2poke(dic):
 
 def choix_perso():
     "Déf permettant grace a un input de choisir son pokemoon pour le j1"
-    choix_perso = int(input("salameche, darrumarond, carapuce, moustillon, bulbizzare, vipelierre "))
-    while choix_perso <= 0 or choix_perso >= 7 :
-        choix_perso = int(input("salameche, darrumarond, carapuce, moustillon, bulbizzare, vipelierre "))
-    choix_perso -= 1
-    p = dic2poke(get_data_poke(choix_perso))
+    choix_p = int(input("salameche, darrumarond, carapuce, moustillon, bulbizzare, vipelierre "))
+    while choix_p <= 0 or choix_p >= 7 :
+        choix_p = int(input("salameche, darrumarond, carapuce, moustillon, bulbizzare, vipelierre "))
+    choix_p -= 1
+    p = dic2poke(get_data_poke(choix_p))
     return p
